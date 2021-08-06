@@ -30,7 +30,8 @@
     },
     "scripts": {
         "start": "start-storybook -p 6006",
-        "build": "build-storybook"
+        "build": "build-storybook",
+        "build-lib": "rollup -c"
     },
     "eslintConfig": {
         "extends": [
@@ -52,6 +53,10 @@
     },
     "devDependencies": {
         "@babel/core": "^7.15.0",
+        "@babel/preset-react": "^7.14.5",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-node-resolve": "^13.0.4",
+        "@rollup/plugin-typescript": "^8.2.5",
         "@storybook/addon-actions": "^6.3.6",
         "@storybook/addon-backgrounds": "^6.3.6",
         "@storybook/addon-controls": "^6.3.6",
@@ -68,6 +73,10 @@
         "react": "^17.0.2",
         "react-docgen-typescript-loader": "^3.7.2",
         "react-dom": "^17.0.2",
+        "rollup": "^2.56.0",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-postcss": "^4.0.0",
+        "rollup-plugin-terser": "^7.0.2",
         "storybook-css-modules-preset": "^1.1.1"
     },
     "peerDependencies": {
