@@ -1,5 +1,7 @@
-interface ButtonProps {}
+interface ButtonProps {
+    label: string;
+}
 
-export const Button = ({}: ButtonProps) => {
-    return <button>Shareef</button>;
+export const Button = ({ label = "Shareef" }: ButtonProps) => {
+    return <button>{label}</button>;
 };

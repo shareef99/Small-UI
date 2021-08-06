@@ -1,1 +1,1 @@
-export * from "./App";
+export { Button } from "./components/input/button/index";
