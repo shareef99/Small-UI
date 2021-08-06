@@ -1,22 +1,27 @@
 {
-    "name": "small-ui",
-    "version": "0.0.1",
-    "description": "A React-Tailwind highly customizable UI component library",
+    "name": "@small-ui/react",
+    "version": "0.0.2",
+    "description": "A highly customizable React component library",
     "keywords": [
         "react",
-        "tailwind",
         "component library",
+        "smallui",
+        "small-ui",
         "shareef",
         "shareef99"
     ],
     "author": "Nadeem Shareef",
     "license": "MIT",
+    "main": "dist/index.ts",
+    "maintainers": [
+        "Nadeem Shareef"
+    ],
+    "module": "dist/index.es.ts",
     "repository": "https://github.com/shareef99/Small-UI.git",
     "bugs": "https://github.com/shareef99/Small-UI/issues",
     "contributors": [
         "Nadeem Shareef"
     ],
-    "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^11.2.7",
