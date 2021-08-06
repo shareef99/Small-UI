@@ -25,12 +25,13 @@
         "@types/node": "^12.20.19",
         "@types/react": "^17.0.15",
         "@types/react-dom": "^17.0.9",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
         "typescript": "^4.3.5",
         "web-vitals": "^1.1.2"
     },
-    "scripts": {},
+    "scripts": {
+        "start": "start-storybook -p 6006",
+        "build": "build-storybook"
+    },
     "eslintConfig": {
         "extends": [
             "react-app",
@@ -48,5 +49,21 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.15.0",
+        "@storybook/addon-actions": "^6.3.6",
+        "@storybook/addon-essentials": "^6.1.21",
+        "@storybook/addon-links": "^6.3.6",
+        "@storybook/addon-postcss": "^2.0.0",
+        "@storybook/react": "^6.3.6",
+        "babel-loader": "^8.2.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "storybook-css-modules-preset": "^1.1.1"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     }
 }
