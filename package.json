@@ -13,10 +13,10 @@
     "author": "Nadeem Shareef",
     "license": "MIT",
     "main": "dist/index.ts",
+    "module": "dist/index.es.ts",
     "maintainers": [
         "Nadeem Shareef"
     ],
-    "module": "dist/index.es.ts",
     "repository": "https://github.com/shareef99/Small-UI.git",
     "bugs": "https://github.com/shareef99/Small-UI/issues",
     "contributors": [
@@ -60,6 +60,7 @@
         "@babel/core": "^7.15.0",
         "@babel/preset-react": "^7.14.5",
         "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^20.0.0",
         "@rollup/plugin-node-resolve": "^13.0.4",
         "@rollup/plugin-typescript": "^8.2.5",
         "@storybook/addon-actions": "^6.3.6",
@@ -82,6 +83,7 @@
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-postcss": "^4.0.0",
         "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-visualizer": "^5.5.2",
         "storybook-css-modules-preset": "^1.1.1"
     },
     "peerDependencies": {

@@ -25,3 +25,5 @@ yarn-error.log*
 # Added by me
 .storybook/
 stories/
+dist/
+bundle-analysis.html

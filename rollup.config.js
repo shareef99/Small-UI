@@ -1,38 +1,37 @@
-import babel from "@rollup/plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
-import external from "rollup-plugin-peer-deps-external";
-import { terser } from "rollup-plugin-terser";
-import postcss from "rollup-plugin-postcss";
+import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 
-export default [
-    {
-        input: "./src/index.tsx",
-        output: [
-            {
-                file: "dist/index.ts",
-                format: "cjs",
-            },
-            {
-                file: "dist/index.es.ts",
-                format: "es",
-                exports: "named",
-            },
-        ],
-        plugins: [
-            postcss({
-                plugins: [],
-                minimize: true,
-            }),
-            babel({
-                exclude: "node_modules/**",
-                presets: ["@babel/preset-react"],
-                babelHelpers: "bundled",
-            }),
-            external(),
-            resolve(),
-            terser(),
-            typescript(),
-        ],
+import postcss from "rollup-plugin-postcss";
+import visualizer from "rollup-plugin-visualizer";
+import { terser } from "rollup-plugin-terser";
+import { getFiles } from "./scripts/buildUtils.js";
+
+const extensions = [".js", ".ts", ".jsx", ".tsx"];
+
+export default {
+    input: ["./src/index.tsx", ...getFiles("./src/components", extensions)],
+    output: {
+        dir: "dist",
+        format: "esm",
+        preserveModules: true,
+        preserveModulesRoot: "src",
+        sourcemap: true,
     },
-];
+    plugins: [
+        resolve(),
+        commonjs(),
+        typescript({
+            tsconfig: "./tsconfig.build.json",
+            declaration: true,
+            declarationDir: "dist",
+        }),
+        postcss(),
+        terser(),
+        visualizer({
+            filename: "bundle-analysis.html",
+            open: true,
+        }),
+    ],
+    external: ["react", "react-dom"],
+};
